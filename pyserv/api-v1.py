@@ -58,6 +58,7 @@ def get_status(url):
 def get_categories(raw_json):
     categories = []
     goods = raw_json['data']
+    print(goods)
     for good in goods:
         category = good['category']
         if category not in categories:
