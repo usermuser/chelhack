@@ -1,10 +1,22 @@
 import requests
 from fastapi import FastAPI
+from starlette.middleware.cors import CORSMiddleware
 
 url = "http://chelhack.deletestaging.com/goods"
 
 app = FastAPI()
 
+origins = [
+    "http://10.100.67.106:8041",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/black-friday")
 def read_root():
@@ -50,3 +62,5 @@ def get_categories(raw_json):
         if category not in categories:
             categories.append(category)
     return categories
+
+def get_
