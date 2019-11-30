@@ -36,7 +36,7 @@ def read_categories():
 
 
 @app.get("/black-friday/categories/{category_name}")
-def read_goods_of_category(category_name: int):
+def read_goods_of_category(category_name: str):
     raw_json = get_json_with_all_goods(url)
     goods = get_goods_by_category(raw_json, category_name)
     return {'goods': goods}
