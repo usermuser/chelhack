@@ -7,6 +7,7 @@ app = FastAPI()
 
 @app.get("/")
 def read_root():
+    print("root")
     return {'asas':'asasa'}
 
 @app.get("/categories")
