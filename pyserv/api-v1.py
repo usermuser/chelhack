@@ -19,6 +19,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 @app.get("/black-friday")
 def read_root():
     raw_json = get_json_with_all_goods(url)
@@ -34,12 +35,11 @@ def read_categories():
     return {'categories': categories}
 
 
-@app.get("/categories/{category_id}")
-def read_goods_of_category(category_id: int):
+@app.get("/categories/{category_name}")
+def read_goods_of_category(category_name: int):
     raw_json = get_json_with_all_goods(url)
-    categories = get_categories(raw_json)
-    status = raw_json['status']
-    return {'categories': categories}
+    goods = get_goods_by_category(raw_json, category_name)
+    return {'goods': goods}
 
 
 @app.get('/status')
@@ -64,3 +64,11 @@ def get_categories(raw_json):
             categories.append(category)
     return categories
 
+
+def get_goods_by_category(raw_json, category):
+    goods = raw_json['data']
+    result_goods = []
+    for good in goods:
+        if good['category'] == category:
+            result_goods.append(good)
+    return result_goods
