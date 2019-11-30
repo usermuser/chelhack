@@ -1,12 +1,9 @@
 import requests
 from fastapi import FastAPI
-from pydantic import BaseModel
 
 url = "http://chelhack.deletestaging.com/goods"
 
 app = FastAPI()
-
-
 
 
 @app.get("/categories")
