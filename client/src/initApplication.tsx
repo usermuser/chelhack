@@ -18,7 +18,7 @@ export const initApplcation = async () => {
 
   render(
     <Provider store={store}>
-      <Application greeting="Hello, world!" />
+      <Application />
     </Provider>,
     document.getElementById('application'),
   )

@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "module": "esnext",
+    "target": "es2015",
+    "lib": [
+      "es2016",
+      "dom"
+    ],
+    "sourceMap": true,
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "experimentalDecorators": false,
+    "downlevelIteration": true,
+    "resolveJsonModule": true,
+    "typeRoots": ["../node_modules/@types"],
+  },
+  "exclude": [
+    "node_modules",
+  ],
+  "include": [
+    // "../globalConfig",
+    "typings",
+    "src",
+  ],
+}
