@@ -1,0 +1,35 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "API",
+    "description": "Chelhack API: Black Friday",
+    "version": "v1"
+  },
+  "paths": {
+    "/error": {
+      "get": {
+        "tags": [
+          "Errors"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/goods": {
+      "get": {
+        "tags": [
+          "Goods"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": { }
+}
