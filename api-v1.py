@@ -6,6 +6,7 @@ url = "http://chelhack.deletestaging.com/goods"
 
 app = FastAPI()
 
+
 # class Category(BaseModel):
 #     # id: int
 #     name: str
@@ -13,15 +14,14 @@ app = FastAPI()
 
 @app.get("/categories")
 def read_categories():
-    raw_json = get_json_with_all_goods()
+    raw_json = get_json_with_all_goods(url)
+    categories = get_categories(raw_json)
     status = raw_json['status']
-    print(raw_json)
-    return status
-    # return {"categories": 'suck my dick'}
+    return {'categories': categories}
 
 
 @app.get('/status')
-def get_status():
+def status():
     return get_status(url)
 
 
@@ -32,6 +32,7 @@ def get_json_with_all_goods(url):
 def get_status(url):
     return get_json_with_all_goods(url)['status']
 
+
 def get_categories(raw_json):
     categories = []
     goods = raw_json['data']
@@ -40,6 +41,3 @@ def get_categories(raw_json):
         if category not in categories:
             categories.append(category)
     return categories
-
-
-
