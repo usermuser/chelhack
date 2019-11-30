@@ -1,3 +1,7 @@
 export enum EGoodsActions {
-  GET_BOOKS = 'GOODS/GET_BOOKS',
+  SET_CATEGORIES = 'GOODS/SET_CATEGORIES',
 };
+
+export enum EModalActions {
+  SET_ACTIVE_MODAL = 'MODAL/SET_ACTIVE_MODAL',
+}

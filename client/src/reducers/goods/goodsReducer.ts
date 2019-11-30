@@ -1,7 +1,7 @@
 import { TReduxActions } from "../../types/actions";
-import { IGoods } from "../../types/Goods";
+import { IGoodsDetail } from "../../types/Goods";
 
-const DEFAULT_GOODS_STATE: IGoods[] = [];
+const DEFAULT_GOODS_STATE: IGoodsDetail[] = [];
 
 export const goodsReducer = (state = DEFAULT_GOODS_STATE, action: TReduxActions) => {
   switch(action.type) {

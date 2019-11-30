@@ -36,6 +36,16 @@ module.exports = (_, argv) => {
           ],
         },
         {
+          test: /\.(png|svg|ogg|jpe?g)$/,
+          loader: 'url-loader',
+          options: { 
+            limit: 5000,
+            name: isProduction
+              ? '[name].[hash:5].[ext]'
+              : '[name].[ext]',
+          }
+        },
+        {
           test: /\.scss$/,
           exclude: /node_modules/,
           use: [
@@ -78,6 +88,9 @@ module.exports = (_, argv) => {
     ],
     devServer: {
       hot: true,
+      proxy: {
+        '/api': 'http://localhost:3000/',
+      },
       port: 3000,
     },
   };

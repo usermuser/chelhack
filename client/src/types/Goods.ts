@@ -1,20 +1,23 @@
-export interface IGoods {
+export interface IGoodsBase {
   id: TGoodID,
   title: string,
   availability: boolean,
   price: number,
   finalPrice: number,
-  category: ICategories,
+  category: ICategory,
   availableInDays: number,
   brand: string,
   brandId: TBrandID,
   quantity: number,
   imageUrl: string,
+}
+
+export interface IGoodsDetail extends IGoodsBase {
   parameters: IGoodParameter[],
 }
 
-export interface ICategories {
-
+export interface ICategory {
+  name: string;
 }
 
 export interface IGoodParameter {

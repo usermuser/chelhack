@@ -1,8 +1,8 @@
 import { Repository } from './Repository';
 
 export class GoodsRepository extends Repository {
-  public async getBooks() {
-    const response = await this.httpClient.post('/books');
+  public async categories() {
+    const response = await this.httpClient.get<string[]>('/categories');
 
     return response.data;
   }

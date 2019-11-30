@@ -1,7 +1,8 @@
-import { Action } from "redux";
-import { EGoodsActions } from "./actionTypes";
+import { Action } from "redux";;
+import { setCategoriesActionCreator } from "../actions/categories/setCategories";
+import { setActiveModalActionCreator } from "../actions/modal";
 
-export type TReduxActions = Action<any>;
+export type TReduxActions = ReturnType<typeof setCategoriesActionCreator> | ReturnType<typeof setActiveModalActionCreator>
 
 export interface IPayloadAction<P = undefined, T extends string = string> extends Action<T> {
   payload: P;
