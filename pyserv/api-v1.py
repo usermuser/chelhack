@@ -5,6 +5,9 @@ url = "http://chelhack.deletestaging.com/goods"
 
 app = FastAPI()
 
+@app.get("/")
+def read_root():
+    return {'asas':'asasa'}
 
 @app.get("/categories")
 def read_categories():
