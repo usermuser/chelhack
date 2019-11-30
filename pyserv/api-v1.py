@@ -5,18 +5,26 @@ url = "http://chelhack.deletestaging.com/goods"
 
 app = FastAPI()
 
-@app.get("/")
+@app.get("/black-friday")
 def read_root():
-    print("root")
-    return {'asas':'asasa'}
+    raw_json = get_json_with_all_goods(url)
+    goods = raw_json['data']
+    return {'goods': goods}
 
-@app.get("/categories")
+
+@app.get("/black-friday/categories")
 def read_categories():
     raw_json = get_json_with_all_goods(url)
     categories = get_categories(raw_json)
     status = raw_json['status']
     return {'categories': categories}
 
+@app.get("/categories/{category_id}")
+def read_goods_of_category(category_id: int):
+    raw_json = get_json_with_all_goods(url)
+    categories = get_categories(raw_json)
+    status = raw_json['status']
+    return {'categories': categories}
 
 @app.get('/status')
 def status():
@@ -39,3 +47,4 @@ def get_categories(raw_json):
         if category not in categories:
             categories.append(category)
     return categories
+
