@@ -7,9 +7,6 @@ url = "http://chelhack.deletestaging.com/goods"
 app = FastAPI()
 
 
-# class Category(BaseModel):
-#     # id: int
-#     name: str
 
 
 @app.get("/categories")
