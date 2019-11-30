@@ -1,6 +1,4 @@
-
-<!-- saved from url=(0057)file:///home/borsch/Downloads/response_1575096660420.html -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body>{
+{
   "status": "Success",
   "message": null,
   "data": [
@@ -8,7 +6,7 @@
       "id": 149505401,
       "title": "Смартфон Oukitel C10, серый ",
       "availability": true,
-      "price": 4490,
+      "pip install pydantic": 4490,
       "finalPrice": 2790,
       "category": "Smartphones",
       "availableInDays": 0,
@@ -3105,4 +3103,4 @@
     "createdAt": "2019-11-26T10:52:53",
     "totalItems": 72
   }
-}</body></html>
+}
