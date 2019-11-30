@@ -14,11 +14,25 @@ app = FastAPI()
 @app.get("/categories")
 def read_categories():
     raw_json = get_json_with_all_goods()
+    status = raw_json['status']
     print(raw_json)
-    # return {"categories": categories}
+    return status
+    # return {"categories": 'suck my dick'}
+
+
+@app.get('/status')
+def get_status():
+    return get_status(url)
+
 
 def get_json_with_all_goods(url):
     return requests.get(url).json()
+
+
+def get_status(url):
+    r = requests.get(url).json()['status']
+    # print(r)
+    return r
 
 
 
