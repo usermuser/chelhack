@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server -d --config ./webpack.config.js",
-    "build": "rm -rf ./dist && webpack -p --config ./webpack/web.js",
+    "build": "rm -rf ./dist && webpack -p --config ./webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
