@@ -35,14 +35,14 @@ def read_categories():
     return {'categories': categories}
 
 
-@app.get("/categories/{category_name}")
+@app.get("/black-friday/categories/{category_name}")
 def read_goods_of_category(category_name: int):
     raw_json = get_json_with_all_goods(url)
     goods = get_goods_by_category(raw_json, category_name)
     return {'goods': goods}
 
 
-@app.get('/status')
+@app.get('/black-friday/status')
 def status():
     return get_status(url)
 
