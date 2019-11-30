@@ -17,11 +17,24 @@ def read_categories():
     status = raw_json['status']
     print(raw_json)
     return status
-    # return {"categories": 'suck my dick'}
+    # return {"categories": 'suck my nipple'}
 
+
+@app.get("/categories_v2")
+def read_categories_v2():
+    return get_categories_v2(url)
+
+
+def get_categories_v2(url):
+    r = requests.get(url).json()['data']
+    result = []
+    for category in r:
+        if category['category'] not in result:
+            result.append(category['category'])
+    return result
 
 @app.get('/status')
-def get_status():
+def status():
     return get_status(url)
 
 
@@ -33,6 +46,7 @@ def get_status(url):
     r = requests.get(url).json()['status']
     # print(r)
     return r
+
 
 
 
