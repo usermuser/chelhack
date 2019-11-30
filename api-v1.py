@@ -6,6 +6,7 @@ url = "http://chelhack.deletestaging.com/goods"
 
 app = FastAPI()
 
+
 @app.get("/categories")
 def read_categories():
     raw_json = get_json_with_all_goods()
