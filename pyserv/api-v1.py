@@ -63,4 +63,3 @@ def get_categories(raw_json):
             categories.append(category)
     return categories
 
-def get_
