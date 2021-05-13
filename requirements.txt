@@ -5,7 +5,7 @@ email-validator==1.0.5
 falcon==2.0.0
 fastapi==0.44.0
 idna==2.8
-pydantic==1.2
+pydantic==1.6.2
 requests==2.22.0
 starlette==0.12.9
 ujson==1.35
